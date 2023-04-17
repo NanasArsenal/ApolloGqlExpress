@@ -1,27 +1,11 @@
 const express = require('express');
 const {ApolloServer ,}    = require('@apollo/server');
 const {startStandaloneServer} = require('@apollo/server/standalone')
+const typeDefs = require('./typeDefs');
+const resolvers = require('./resolvers')
 
 
 
-const typeDefs = `#graphql
-
-    type Query{
-        hello: String
-    }
-
-
-
-`;
-
-
-const resolvers = {
-    Query:{
-        hello : ()=>{
-            return "Hello World"
-        }
-    }
-}
 
 const server = new ApolloServer({
     typeDefs,
