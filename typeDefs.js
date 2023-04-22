@@ -23,7 +23,7 @@ const typeDefs = `#graphql
     type Mutation{
         createPost(post: PostInput): [Post],
         deletePost(post: ID): String,
-        updatePost(post: ID): Post,
+        updatePost(post: ID, update: PostInput): Post,
     }
 
     type Mutation{
