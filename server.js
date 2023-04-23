@@ -5,6 +5,7 @@ const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
 const { default: mongoose } = require('mongoose');
 const connDB = require('./db _config/config')
+require('dotenv').config()
 
 connDB();
 

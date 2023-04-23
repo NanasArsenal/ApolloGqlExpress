@@ -39,7 +39,14 @@ const resolvers = {
     updatePost: async function(parentValue,args,context){
         const id = args.post;
         const {title,body}= args.update;
-        const post = await Post.findByIdAndUpdate(id,{title,body}, {new:true});
+        const updates = {}
+        if(title !== undefined){
+            updates.title = title;
+        }
+        if(body !== undefined){
+            updates.body= body
+        }
+        const post = await Post.findByIdAndUpdate(id,updates, {new:true});
         return post;
 
     }
